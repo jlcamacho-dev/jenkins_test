@@ -1,18 +1,27 @@
 pipeline {
-    agent any 
+    agent { label '165345_bluedataImageBuild' }
 
-    stages { 
-        stage('stage 1') {
-            echo 'stage 1'
-        }
-        stage('stage 2') {
-            echo 'stage 2'
-        }
-        stage('stage 3') {
-            echo 'stage 3'
-        }
-
-
+    options {
+        // This is required if you want to clean before build 
+        skipDefaultCheckout(true) 
     }
 
+    stages {
+        stage('Stage 1') {
+            steps {
+                echo "step 1"
+            }
+        }
+
+        stage('Stage 2') {
+            steps {
+                echo "step 2"
+            }
+        }
+        stage('Stage 3') {
+            steps {
+                echo "step 3"
+            }
+        }
+    }
 }
