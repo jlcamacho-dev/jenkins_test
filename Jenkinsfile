@@ -2,9 +2,23 @@ pipeline {
     agent any 
 
     stages { 
-        stage('list env vars') {
+        stage('stage 1') {
             steps{
-                sh "printvenv | sort" 
+                script {
+                    echo "step 1"
+                }
+            }
+            stage('stage 2') {
+                steps{
+                    script {
+                        echo "step 2"
+                } 
+            }
+            stage('stage 3') {
+                steps{
+                    script {
+                        echo "step 3"
+                    }
             }
         }
 
