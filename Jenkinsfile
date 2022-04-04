@@ -16,7 +16,7 @@ pipeline {
 
         stage('Stage 2') {
             steps {
-                echo "running test script..." >> ${WORKSPACE}/foo.txt
+                echo "running test script..." >> ${WORKSPACE}/foo.txt"
 
                 script {
                     sh "${WORKSPACE}/scripts/hello.sh"
