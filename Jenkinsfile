@@ -1,5 +1,5 @@
 pipeline {
-    agent { label '165345_bluedataImageBuild' }
+    agent any
 
     options {
         // This is required if you want to clean before build 
