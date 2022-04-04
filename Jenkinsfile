@@ -7,22 +7,20 @@ pipeline {
     }
 
     stages {
-        stage('Stage 1') {
+        stage('setup') {
             steps {
                 cleanWs()
                 checkout scm 
-                echo "step 1"
             }
         }
 
         stage('Stage 2') {
             steps {
-                echo "step 2"
-            }
-        }
-        stage('Stage 3') {
-            steps {
-                echo "step 3"
+                echo "running test script..." >> ${WORKSPACE}/foo.txt
+
+                script {
+                    sh "${WORKSPACE}/scripts/hello.sh"
+                }
             }
         }
     }
