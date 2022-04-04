@@ -9,6 +9,8 @@ pipeline {
     stages {
         stage('Stage 1') {
             steps {
+                cleanWs()
+                checkout scm 
                 echo "step 1"
             }
         }
