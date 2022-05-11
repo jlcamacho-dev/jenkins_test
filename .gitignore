@@ -1,3 +1,4 @@
 foo.sh
 repo foo.backup.sh
 backup.jenkinsfile
+.DS_Store
